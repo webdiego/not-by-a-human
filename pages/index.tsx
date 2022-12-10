@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Robot from '../public/robot-1.png';
 import Head from 'next/head';
 import Made from '../components/Made';
+import Comment from '../public/comic.svg';
 type Request = {
   url: string;
 };
@@ -30,32 +31,41 @@ export default function Home() {
           setTimeout(() => setState('search'), 2000);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setState('error');
         setTimeout(() => setState('search'), 2000);
-        console.log(error);
       });
   }
 
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Image from a robot</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Made />
       <div
         className={
-          'bg-black text-white w-full flex flex-col py-10 items-center justify-start min-h-screen'
+          'bg-black text-white w-full flex flex-col py-10 items-center justify-start min-h-screen '
         }
       >
-        <div className=" max-w-4xl mx-auto flex flex-col items-center">
+        <div className=" max-w-4xl mx-auto flex flex-col items-center ">
           <h1 className="title-gradient">Hello human!</h1>
           <Image src={Robot} width={100} height={100} alt="robot" />
-          <div className="flex flex-col md:flex-row items-end">
+          <p className="w-72 sm:w-max bg-gray-100 text-black rounded-md px-3 text-sm py-2 flex mt-2">
+            <Image
+              src={Comment}
+              width={20}
+              height={20}
+              alt="robot"
+              className="mr-2 rotate-[10deg]"
+            />
+            Search an image that not exist, I&apos;ll create for you
+          </p>
+          <div className="flex flex-col md:flex-row items-end ">
             <div className="flex flex-col items-start justify-center md:mr-2 mt-5">
               <input
-                className="w-96 text-white border-2 rounded-md bg-black border-white p-1"
+                className="w-72 sm:w-96 text-white border-2 rounded-md bg-black border-white p-1"
                 onChange={(event) => setValue(event.target.value)}
               ></input>
             </div>
