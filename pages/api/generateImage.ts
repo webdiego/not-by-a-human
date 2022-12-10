@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  let requestImage = req.body.text;
+  let requestImage = req.body.request;
   console.log(requestImage);
   try {
     const response = await openai.createImage({
