@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Image from 'next/image';
 import Robot from '../public/robot-1.png';
 import Head from 'next/head';
+import Made from '../components/Made';
 type Request = {
   url: string;
 };
@@ -41,9 +42,10 @@ export default function Home() {
         <title>My page title</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <Made />
       <div
         className={
-          'bg-black text-white w-full flex flex-col py-20 items-center justify-start min-h-screen'
+          'bg-black text-white w-full flex flex-col py-10 items-center justify-start min-h-screen'
         }
       >
         <div className=" max-w-4xl mx-auto flex flex-col items-center">

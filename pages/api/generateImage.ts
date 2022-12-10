@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let requestImage = req.body.request;
-  console.log(requestImage);
+
   try {
     const response = await openai.createImage({
       prompt: requestImage,
@@ -18,10 +18,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let url = response.data.data[0].url;
     res.status(200).json({ url: url });
   } catch (error) {
-    if (error) {
-      res.status(400).json({ error: `${error}` });
-    } else {
-      res.status(400).json({ error: `${error}` });
-    }
+    res.status(400).json({ error: `${error}` });
   }
 }
