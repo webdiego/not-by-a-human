@@ -30,9 +30,10 @@ export default function Home() {
           setTimeout(() => setState('search'), 2000);
         }
       })
-      .catch(() => {
+      .catch((error) => {
         setState('error');
         setTimeout(() => setState('search'), 2000);
+        console.log(error);
       });
   }
 
