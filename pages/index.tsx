@@ -40,7 +40,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Image from a robot</title>
+        <title>Not by a human</title>
+        <meta name="description" content="Image created by AI" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Made />
@@ -60,10 +61,11 @@ export default function Home() {
               alt="robot"
               className="mr-2 rotate-[10deg]"
             />
-            Search an image that not exist, I&apos;ll create for you
+            Search an image that not exist, I&apos;ll create one for you
           </p>
           <div className="flex flex-col md:flex-row items-end ">
             <div className="flex flex-col items-start justify-center md:mr-2 mt-5">
+              <label>Search</label>
               <input
                 className="w-72 sm:w-96 text-white border-2 rounded-md bg-black border-white p-1"
                 onChange={(event) => setValue(event.target.value)}

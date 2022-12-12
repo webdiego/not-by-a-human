@@ -16,7 +16,7 @@ export default function Button({ state, onClick }: ButtonProps) {
         ? 'Completed'
         : state === 'error'
         ? 'Error'
-        : 'Search'}
+        : 'Search image'}
     </button>
   );
 }
